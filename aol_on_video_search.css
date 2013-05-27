@@ -1,0 +1,67 @@
+/* 
+    Document   : aol_on_video_search
+    Created on : May 24, 2013, 11:15:18 AM
+    Author     : clee
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+h1{
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+}
+
+label{
+    font-size: 14px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+body{
+    background-color:#CEECF5;
+}
+
+#content-body{
+    float: left;
+    margin-left: 5%;
+    margin-right:5%;
+    width:90%;
+    background-color: white;
+    min-height: 600px;
+}
+
+#aol-on-search{
+    text-align: center;
+}
+.video_thumb_image{
+    width: 140px;
+    height: 104px;
+}
+
+#search-result{
+    border-top: #00BFFF 3px solid;
+    margin-top: 30px;
+}
+
+.item-row{
+    padding: 10px;
+    border-bottom: #00BFFF 1px solid;
+    height: 110px;
+}
+.item-row .image_link{
+    float: left;
+    padding-right: 10px;
+}
+.item-row .title{
+    margin-left:150px;
+}
+.item-row .video_owner{
+    margin-left:150px;
+    font-size: 11px;
+    font-style: italic;
+}

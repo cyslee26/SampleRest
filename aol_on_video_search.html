@@ -1,0 +1,54 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AOL ON Video Search Example</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="aol_on_video_search.css">
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+              $("#search-term-submit").click(function(){
+                  
+                  var formData = $('#search-term').serialize();
+                  $.ajax({
+                    url: 'aol_on_video_search.php',
+                    type: 'POST',
+                    data: formData,
+                    dataType:'json',
+                    success: function (data) {
+                        var result = '';
+                        $.each(data.result, function(i, item) {
+                            result += '<div class="item-row">';
+                            $.each(data.fields, function(k, field) {
+                                result += '<div class="'+field+'">' + item[field] + '</div>';
+                            });
+                            result += '</div>';
+                        });
+                        $('#search-result').html(result);   
+                    }                       
+                  });                     
+              });
+              
+            });
+        </script>
+    </head>
+    <body>
+        
+        <div id="content-body">
+            <h1>AOL ON Video Search by keyword</h1>
+            <div id="search-query">
+                <form id="aol-on-search">
+                    <label>Keyword</label>
+                    <input id="search-term" name="search_term" type="text" size="30" />
+                    <input type="button" value="submit" id="search-term-submit" />
+                </form>
+            </div>
+            <div id="search-result"></div>
+        </div>
+        
+    </body>
+</html>
